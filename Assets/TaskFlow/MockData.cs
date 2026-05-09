@@ -19,6 +19,22 @@ public class TaskItem
     }
 }
 
+[System.Serializable]
+public class TeamMember
+{
+    public string Name;
+    public string Role;
+    public string Initiale;
+    public string AvatarColor;
+    public int ActiveTasks;
+
+    public TeamMember(string name, string role, string initiale, string color, int activeTasks)
+    {
+        Name = name; Role = role; Initiale = initiale;
+        AvatarColor = color; ActiveTasks = activeTasks;
+    }
+}
+
 public static class MockData
 {
     public static List<string> Projects = new List<string>
@@ -68,5 +84,14 @@ public static class MockData
         new TaskItem("Rapport audit SSL",            "Audit sécurité",           Status.Done,        "Yassine"),
         new TaskItem("Page d'accueil e-commerce",    "Site web e-commerce",      Status.Done,        "Anas"),
         new TaskItem("Cahier des charges analytics", "Dashboard analytics",      Status.Done,        "Yassine"),
+    };
+
+    public static List<TeamMember> Team = new List<TeamMember>
+    {
+        new TeamMember("Anas",    "Lead Dev",      "A", "#4F46E5", 4),
+        new TeamMember("Yassine", "UI / Frontend", "Y", "#059669", 3),
+        new TeamMember("Sara",    "QA / Tests",    "S", "#DC2626", 2),
+        new TeamMember("Mehdi",   "DevOps",        "M", "#D97706", 1),
+        new TeamMember("Lina",    "Product Owner", "L", "#7C3AED", 5),
     };
 }
